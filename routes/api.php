@@ -14,11 +14,11 @@ use Illuminate\Http\Request;
 */
 
 Route::get('users', 'UserController@index');
-Route::get('users/{user}', 'UserController@show');
+Route::get('users/{id}', 'UserController@show');
 Route::post('users', 'UserController@store');
-Route::put('users/{user}', 'UserController@update');
-Route::delete('users/{user}', 'UserController@delete');
+Route::put('users/{id}', 'UserController@update');
+Route::delete('users/{id}', 'UserController@delete');
 
-Route::post('register', 'Auth\RegisterController@register');
-Route::post('login', 'Auth\LoginController@login');
-Route::post('logout', 'Auth\LoginController@logout');
+Route::post('register', 'UserController@register');
+Route::post('login', 'UserController@login');
+Route::post('test', 'UserController@test');
