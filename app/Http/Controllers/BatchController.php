@@ -17,6 +17,7 @@ class BatchController extends Controller
                 'user_id' => $chord['user_id'],
                 'title' => $chord['title'],
                 'chords' => $chord['chords'],
+                'chords_key' => $chord['chords_key'],
             ]);
         }
 
@@ -94,7 +95,7 @@ class BatchController extends Controller
             $lineup = Lineup::findOrFail($lineup['id']);
             $lineup->delete();
         }
-        
+
         foreach ($request->input('settings') as $setting) {
             $setting = Setting::findOrFail($setting['id']);
             $setting->delete();

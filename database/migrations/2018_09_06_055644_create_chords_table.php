@@ -19,6 +19,7 @@ class CreateChordsTable extends Migration
             $table->foreign('user_id')->references('id')->on('users');
             $table->string('title',100);
             $table->text('chords');
+            $table->string('chords_key',100);
             $table->timestamps();
         });
     }
