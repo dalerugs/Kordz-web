@@ -24,7 +24,7 @@ class BatchController extends Controller
             Lineup::create([
                 'id' => $lineup['id'],
                 'user_id' => $lineup['user_id'],
-                'name' => $lineup['title'],
+                'name' => $lineup['name'],
             ]);
         }
 
@@ -85,16 +85,16 @@ class BatchController extends Controller
             $chord->delete();
         }
 
-        foreach ($request->input('lineups') as $lineup) {
-            $lineup = Lineup::findOrFail($lineup['id']);
-            $lineup->delete();
-        }
-
         foreach ($request->input('lineupChords') as $lineupChord) {
             $lineupChord = LineupChord::findOrFail($lineupChord['id']);
             $lineupChord->delete();
         }
 
+        foreach ($request->input('lineups') as $lineup) {
+            $lineup = Lineup::findOrFail($lineup['id']);
+            $lineup->delete();
+        }
+        
         foreach ($request->input('settings') as $setting) {
             $setting = Setting::findOrFail($setting['id']);
             $setting->delete();
