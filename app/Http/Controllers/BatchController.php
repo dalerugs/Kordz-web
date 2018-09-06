@@ -47,13 +47,13 @@ class BatchController extends Controller
         }
     }
 
-    public function batchRead()
+    public function batchRead($user_id)
     {
         return response()->json([
-              'chords'=> Chord::all(),
-              'lineups'=> Lineup::all(),
-              'lineupChords'=> LineupChord::all(),
-              'settings'=> Setting::all(),
+              'chords'=> Chord::all()->where('user_id', $user_id),
+              'lineups'=> Lineup::all()->where('user_id', $user_id),
+              'lineupChords'=> LineupChord::all()->where('user_id', $user_id),
+              'settings'=> Setting::all()->where('user_id', $user_id),
         ]);
     }
 

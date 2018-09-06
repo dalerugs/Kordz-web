@@ -23,6 +23,6 @@ Route::post('register', 'UserController@register');
 Route::post('login', 'UserController@login');
 
 Route::post('batchCreate', 'BatchController@batchCreate');
-Route::get('batchRead', 'BatchController@batchRead');
+Route::get('batchRead/{user_id}', 'BatchController@batchRead');
 Route::post('batchUpdate', 'BatchController@batchUpdate');
 Route::post('batchDelete', 'BatchController@batchDelete');
