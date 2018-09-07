@@ -38,7 +38,7 @@ class BatchController extends Controller
             ]);
         }
 
-        foreach ($request->input('settings') as $setting) {
+          foreach ($request->input('settings') as $setting) {
             Setting::create([
                 'id' => $setting['id'],
                 'user_id' => $setting['user_id'],
@@ -81,14 +81,14 @@ class BatchController extends Controller
     }
 
     public function batchDelete(Request $request){
-        foreach ($request->input('chords') as $chord) {
-            $chord = Chord::findOrFail($chord['id']);
-            $chord->delete();
-        }
-
         foreach ($request->input('lineupChords') as $lineupChord) {
             $lineupChord = LineupChord::findOrFail($lineupChord['id']);
             $lineupChord->delete();
+        }
+
+        foreach ($request->input('chords') as $chord) {
+            $chord = Chord::findOrFail($chord['id']);
+            $chord->delete();
         }
 
         foreach ($request->input('lineups') as $lineup) {
