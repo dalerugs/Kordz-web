@@ -11,8 +11,8 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
-Route::get('/downloadApk', 'DownloadController@downloadApk')->name('downloadApk');
+Route::get('/', 'HomeController@index');

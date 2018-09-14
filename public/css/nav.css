@@ -1,0 +1,17 @@
+.bg-dark{
+  background: black !important;
+}
+
+.header-text{
+  font-family: 'Open Sans Condensed', sans-serif;
+  font-size: 25px;
+}
+
+.body-text{
+  font-family: 'Abel', sans-serif;
+  font-size: 18px;
+}
+
+.nav-link:hover{
+  text-decoration: underline;
+}
